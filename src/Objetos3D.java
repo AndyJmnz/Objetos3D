@@ -24,7 +24,7 @@ public class Objetos3D extends JPanel implements KeyListener {
     Transform3D cylinderTransform = new Transform3D();
 
     public Objetos3D() {
-        fondo = Toolkit.getDefaultToolkit().getImage("src/fondo2.jpg");
+        fondo = Toolkit.getDefaultToolkit().getImage("src/fondo.jpg");
 
         JLayeredPane layeredPane = new JLayeredPane();
         setLayout(new BorderLayout());
@@ -44,7 +44,6 @@ public class Objetos3D extends JPanel implements KeyListener {
         escenaCubo.compile();
         universoCubo.addBranchGraph(escenaCubo);
 
-        // Crear el Canvas3D para el cilindro
         Canvas3D canvasCilindro = new Canvas3D(config);
         canvasCilindro.addKeyListener(this);
         canvasCilindro.setSize(400, 400);
@@ -58,7 +57,6 @@ public class Objetos3D extends JPanel implements KeyListener {
         escenaCilindro.compile();
         universoCilindro.addBranchGraph(escenaCilindro);
 
-        // Mostrar la imagen de fondo en el fondo del JLayeredPane
         JLabel fondoLabel = new JLabel(new ImageIcon(fondo));
         fondoLabel.setBounds(0, 0, getWidth(), getHeight());
         layeredPane.add(fondoLabel, JLayeredPane.PALETTE_LAYER);
@@ -95,7 +93,7 @@ public class Objetos3D extends JPanel implements KeyListener {
         light.setInfluencingBounds(bounds);
         objetoRaiz.addChild(light);
 
-        Background fondo = crearFondo("src/fondo2.jpg");
+        Background fondo = crearFondo("src/fondo.jpg");
         if (fondo != null) {
             objetoRaiz.addChild(fondo);
         }
@@ -136,7 +134,7 @@ public class Objetos3D extends JPanel implements KeyListener {
         AmbientLight luzAmbiente = new AmbientLight(new Color3f(0.3f, 0.3f, 0.3f));
         luzAmbiente.setInfluencingBounds(bounds);
         objetoRaiz.addChild(luzAmbiente);
-        Background fondo = crearFondo("src/fondo2.jpg");
+        Background fondo = crearFondo("src/fondo.jpg");
         if (fondo != null) {
             objetoRaiz.addChild(fondo);
         }

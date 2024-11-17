@@ -14,6 +14,7 @@ public class Main {
         ventana.setVisible(true);
         ventana.setSize(800,400);
         ventana.setLocationRelativeTo(null);
+        ventana.setResizable(false);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
